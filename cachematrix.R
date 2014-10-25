@@ -3,7 +3,7 @@
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y) {
-    if ( is.na(x) == FALSE && all(x == y) ) {
+    if ( is.na(x) == FALSE && dim(x) == dim(y) && all(x == y) ) {
       message("same data, keeping the cache")
     } else {
       inv <<- NULL
